@@ -3,16 +3,16 @@
   margin: 0;
   font-family: Montserrat, Arial;
   color: white;
+  box-sizing: border-box;
 }
 
 body {
-  margin-top: 100px;
   background-color: #120a04;
+  overflow-x: hidden;
 }
-
 /*========== HEADER Styling ============*/
 header {
-  background-image: linear-gradient(to right, #120a04, #2f1f0e);
+  background-image: linear-gradient(to right, #120a04d7, #2f1f0ed7);
   height: 100px;
   display: flex;
   justify-content: space-around;
@@ -75,114 +75,199 @@ nav {
 /*========== HERO BANNER Styling ============*/
 
 .hero-section {
-  width: 90vw;
-  height: 95vh;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-left: 8%;
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
-  padding-left: 9rem;
-  padding-right: 2rem;
-  overflow:visible;
-}
-
-.hero-section::before {
-  content: "";
-  top: 70%;
-  left: 70%;
-  width: 80vmax;
-  height: 80vmax;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle at 43% 50%,
-    rgba(251, 193, 117, 0.26) 5%,
-    rgba(251, 193, 117, 0.14) 30%,
-    rgba(0, 0, 0, 0) 50%
-  );
-  filter: blur(40px);
-  position: absolute;
-  z-index: 1;
-}
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  top: 40%;
-  right: -135%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-
-  width: 100vmax;
-  height: 100vmax;
-
-  background: linear-gradient(
-    to right,
-    rgba(134, 69, 28, 0.5) 0%,
-    rgba(251, 193, 117, 0.1) 35%,
-    rgba(0, 0, 0, 0) 100%
-  );
-
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-text {
   overflow: hidden;
-  flex: 0.5;
-  z-index: 2;
 }
 
-.hero-text .main-text {
-  font-size: 100px;
+/* --- HERO TEXT (REMAINS 50% WIDTH) --- */
+.hero-text {
+  width: 50%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* --- TEXT AND BUTTON STYLES (REMAIN THE SAME) --- */
+.hero-text h1 {
+  font-size: 4rem;
   font-weight: 700;
-  line-height: 123px;
-  margin-bottom: 22px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text .descriptive-line {
-  font-size: 22.7px;
-  margin-bottom: 46px;
+  font-size: 1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  max-width: 450px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.hero-text .call-to-action {
-  font-size: 22.7px;
-  background-color: #835220;
-  padding: 17px 20px;
+.call-to-action {
+  background: linear-gradient(to right, #c69c6d, #a47e53);
   border: none;
-  border-radius: 12px;
+  padding: 15px 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  width: fit-content;
+  transition: transform 0.3s ease;
+  color: #fff;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+.call-to-action:hover {
+  transform: scale(1.05);
+}
+
+.social-proof {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.avatars {
+  display: flex;
+}
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #120a04;
+  margin-right: -10px;
+  background-size: cover;
+  background-position: center;
+  background-color: #333;
+}
+.reviews-text {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.stars i {
+  color: #fbc175;
+  font-size: 0.8rem;
+}
+.reviews-text span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* --- IMAGE WRAPPER (DEFAULT/LARGE SCREEN: FULL HEIGHT) --- */
+.second-image {
+  display: none;
+}
 .cup-wrapper {
-  flex: 0.75;
-  height: 95vh;
-  overflow: visible;
-  z-index: 20;
-}
-
-.cup-wrapper::before {
-  content: "";
   position: absolute;
-  top: 35%;
-  right: -149%;
-  transform: translate(-50%, -50%) rotate(-46deg);
-
-  width: 100vmax;
-  height: 100vmax;
-  background: linear-gradient(
-    to right,
-    rgba(29, 19, 5, 0.45) 0%,
-    rgba(0, 0, 0, 0.427) 35%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  filter: blur(22px);
-  clip-path: polygon(6% 8%, 94% 2%, 98% 50%, 94% 98%, 6% 92%, 2% 50%);
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  z-index: 1;
   pointer-events: none;
-  z-index: 19;
 }
 
 .cup-image {
-  width: 90%;
-  z-index: 20;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: right top;
+}
+
+/*========== HERO RESPONSIVENESS ============*/
+
+/* --- 2. Mid-Size Screens (Desktops/Large Tablets) --- */
+@media (max-width: 1309px) {
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+
+  .cup-image {
+    height: 90%;
+
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 1188px) {
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+
+  .cup-image {
+    height: 70%;
+    margin-top: 100px;
+  }
+}
+
+/* --- 3. Small Screens (Tablets/Mobile) --- */
+/* Below 992px, switch to stacked layout and adjust image size drastically */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    padding-top: 130px;
+    min-height: 80vh;
+  }
+
+  .hero-text {
+    width: 100%;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-text .descriptive-line {
+    margin: 0 auto 30px auto;
+  }
+
+  /* Image adjustments for stacked layout */
+  .cup-wrapper {
+    height: 60vh;
+  }
+
+  .first-image {
+    display: none;
+  }
+  .second-image {
+    height: 100%;
+    width: auto;
+    opacity: 0.07;
+    object-fit: contain;
+    object-position: center;
+    margin-top: 25px;
+    display: block;
+  }
+}
+
+/* --- 4. Extra Small Screens (Mobile) --- */
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
 }
 
 /*========== RESPONSIVENESS Styling ============*/
