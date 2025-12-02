@@ -36,10 +36,10 @@
       <div class="header-middle">
         <nav>
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Menu</li>
-            <li>Contact</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -66,11 +66,11 @@
             src="assets/images/close.png"
             alt=""
           />
-          <li>Home</li>
-          <li>About</li>
-          <li>Menu</li>
-          <li>Contact</li>
-          <li class="smallview">favourite</li>
+          <li><a href="#home" onclick="closeSidebar()">Home</a></li>
+          <li><a href="#about" onclick="closeSidebar()">About</a></li>
+          <li><a href="#menu" onclick="closeSidebar()">Menu</a></li>
+          <li><a href="#contact" onclick="closeSidebar()">Contact</a></li>
+          <li class="smallview">Favourite</li>
           <li class="smallview">Search</li>
           <li class="midView">Login</li>
           <li class="midView">Sign up</li>
@@ -79,7 +79,7 @@
     </div>
 
     <main>
-      <section class="hero-section">
+      <section class="hero-section" id="home">
         <div class="hero-text">
           <h1>Freshly Brewed<br />Served with<br />Love</h1>
           <p class="descriptive-line">
@@ -87,7 +87,9 @@
             rich, aromatic blend of our premium coffee.
           </p>
 
-          <button class="call-to-action">Explore Menu</button>
+          <a href="#menu"
+            ><button class="call-to-action">Explore Menu</button></a
+          >
 
           <div class="social-proof">
             <div class="avatars">
@@ -140,7 +142,31 @@
         </div>
       </section>
 
-      <section class="signature-coffees">
+      <section class="our-story" id="about">
+        <div class="story-text">
+          <h2>Our Story</h2>
+          <h3>From humble origins to your cup.</h3>
+          <p>
+            Crafting the perfect cup wasn't just a business plan; it was a
+            calling. Our journey began in the misty hills where the finest beans
+            are grown. We believe in ethical sourcing, meticulous roasting, and
+            the art of brewing that connects people.
+          </p>
+          <p>
+            Every bean tells a story of dedication, and every sip is a chapter
+            of warmth and community.
+          </p>
+          <button class="call-to-action">Learn More</button>
+        </div>
+        <div class="story-visual">
+          <img
+            src="assets/images/pngtree-coffee-maker-machine-line-art-png-image_14901351.png"
+            alt="Coffee Machine Art"
+          />
+        </div>
+      </section>
+
+      <section class="signature-coffees" id="menu">
         <div class="section-header">
           <h2>Our Signature Coffees</h2>
           <p class="section-subtitle">
@@ -220,10 +246,7 @@
           </div>
           <div class="coffee-card">
             <div class="card-image">
-              <img
-                src="assets/images/Espresso.jpg"
-                alt="Espresso"
-              />
+              <img src="assets/images/Espresso.jpg" alt="Espresso" />
             </div>
             <div class="card-info">
               <h3>Espresso Shot</h3>
@@ -237,10 +260,7 @@
           </div>
           <div class="coffee-card">
             <div class="card-image">
-              <img
-                src="assets/images/Frappe.jpg"
-                alt="Frappe"
-              />
+              <img src="assets/images/Frappe.jpg" alt="Frappe" />
             </div>
             <div class="card-info">
               <h3>Caramel Frappe</h3>
@@ -252,30 +272,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="our-story">
-        <div class="story-text">
-          <h2>Our Story</h2>
-          <h3>From humble origins to your cup.</h3>
-          <p>
-            Crafting the perfect cup wasn't just a business plan; it was a
-            calling. Our journey began in the misty hills where the finest beans
-            are grown. We believe in ethical sourcing, meticulous roasting, and
-            the art of brewing that connects people.
-          </p>
-          <p>
-            Every bean tells a story of dedication, and every sip is a chapter
-            of warmth and community.
-          </p>
-          <button class="call-to-action">Learn More</button>
-        </div>
-        <div class="story-visual">
-          <img
-            src="assets/images/pngtree-coffee-maker-machine-line-art-png-image_14901351.png"
-            alt="Coffee Machine Art"
-          />
         </div>
       </section>
 
@@ -441,7 +437,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer id="contact">
       <div class="footer-cta-section">
         <div class="cta-content">
           <h2>Ready to Experience the<br />Best Coffee?</h2>
@@ -449,10 +445,7 @@
           <button class="call-to-action">Order Now</button>
         </div>
         <div class="cta-image">
-          <img
-            src="assets/images/drink.png"
-            alt="Drink"
-          />
+          <img src="assets/images/drink.png" alt="Drink" />
         </div>
       </div>
 
