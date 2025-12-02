@@ -120,8 +120,25 @@ nav {
    SIDEBAR (MOBILE)
    ========================================= */
 .sidebar {
-  display: none;
+  background-color: #120a04;
+  color: #fbc175;
+  position: fixed;
+  top: 0;
+  /* Start completely off-screen to the right */
+  right: 0;
+  bottom: 0;
+  width: 100vw; /* Default to full width for mobile */
+  font-size: 30px;
   z-index: 101;
+  /* Hide it off-screen */
+  transform: translateX(100%);
+  /* Add smooth transition effect */
+  transition: transform 0.4s ease-in-out;
+}
+
+/* New CSS class: This class will be added/removed by JavaScript */
+.sidebar.active {
+  transform: translateX(0); /* Slide it into view */
 }
 
 /* Sidebar Links Styling */
@@ -352,14 +369,15 @@ nav {
     width: 40px;
   }
   .sidebar {
-    background-color: #120a04;
+    background-color: #120a04; /* #2f1f0e; */
     color: #fbc175;
     position: fixed;
     top: 0;
-    right: -1px;
     bottom: 0;
     width: 63vw;
     font-size: 30px;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.4s ease-in-out;
   }
   .sidebar nav ul {
     width: 100%;
@@ -824,7 +842,19 @@ footer {
   color: #ccc;
 }
 
-.footer-col ul li:hover {
+.footer-col ul li:hover { 
+    color: initial; 
+    padding-left: 0;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #ccc; /* Inherit the list item color */
+  display: block; /* Make the whole area clickable */
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.footer-col ul li:hover a {
   color: #fbc175;
   padding-left: 5px;
 }

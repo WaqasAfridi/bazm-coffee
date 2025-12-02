@@ -458,17 +458,18 @@
         <div class="footer-col">
           <h4>Menu</h4>
           <ul>
-            <li>Espresso</li>
-            <li>Latte</li>
-            <li>Pastries</li>
+            <li><a href="#">Espresso</a></li>
+            <li><a href="#">Latte & Cappuccino</a></li>
+            <li><a href="#">Single Origin</a></li>
+            <li><a href="#">Seasonal Blends</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li>About Us</li>
-            <li>Careers</li>
-            <li>Contact</li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -484,13 +485,19 @@
     </footer>
 
     <script>
+      const hamburger = document.querySelector(".hamburger");
+      const closeBtn = document.querySelector(".close");
       const sidebar = document.querySelector(".sidebar");
-      function openSidebar() {
-        sidebar.style.display = "block";
-      }
-      function closeSidebar() {
-        sidebar.style.display = "none";
-      }
+
+      // Function to open the sidebar
+      hamburger.addEventListener("click", () => {
+        sidebar.classList.add("active");
+      });
+
+      // Function to close the sidebar
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+      });
     </script>
   </body>
 </html>
